@@ -1,13 +1,26 @@
 import tw from "twin.macro"
-
-// const P = tw.p`text-3xl font-light text-warmpurple`
+import Command from "./Command"
+const CONTAINER = tw.div`
+bg-almostblack h-screen w-screen py-5 px-2
+`
+const BANNER = tw.div`flex`
+const PRE = tw.div`text-warmgrey font-mono  mt-8 ml-5 `
+const APP = tw.div`font-mono  mt-8 ml-5 `
 function App() {
   return (
-    <div className="container mx-auto mt-10">
-    <h1 className="text-3xl underline font-extrabold text-warmblue">
-      Hello world!
-    </h1>
-    </div>
+    <CONTAINER>
+      <BANNER>
+        <img src="banner00.svg" alt="" className="" />
+        <span className=" text-warmpurple text-lg self-end opacity-50 ml-5">v1.0</span>
+      </BANNER>
+      <PRE>
+        <p>welcome to my interactive web terminal.</p>
+        <p>type 'help' for a list of available commands.</p>
+      </PRE>
+      <APP>
+        <Command />
+      </APP>
+    </CONTAINER>
   )
 }
 

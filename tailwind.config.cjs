@@ -8,9 +8,11 @@ module.exports = {
     extend: {
       colors: {
         almostblack : '#171717',
-        greenishblue: '##00c6cf',
+        greenishblue: '#00c6cf',
         warmblue:'#0098cb',
-        warmpurple:'#7582ec'
+        warmpurple:'#7582ec',
+        coolgrey:'#aaaaaa',
+        warmgrey:'#94b0b2'
       }
     },
   },
