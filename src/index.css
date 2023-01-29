@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+	background-color: #171717;
+}
 .cursor {
 	position: relative;
 }
-.cursor	i {
+.blinkAnimation{
 	position: absolute;
 	width: 10px;
 	height: 90%;

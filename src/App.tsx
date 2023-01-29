@@ -1,11 +1,10 @@
 import tw from "twin.macro"
 import Command from "./Command"
-const CONTAINER = tw.div`
-bg-almostblack h-screen w-screen py-5 px-2
-`
+const CONTAINER = tw.div` py-5 px-2 `
 const BANNER = tw.div`flex`
 const PRE = tw.div`text-warmgrey font-mono  mt-8 ml-5 `
 const APP = tw.div`font-mono  mt-8 ml-5 `
+
 function App() {
   return (
     <CONTAINER>

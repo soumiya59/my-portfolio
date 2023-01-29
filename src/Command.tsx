@@ -1,12 +1,13 @@
 import React from 'react'
 import Result from './Result'
-import { useDispatch,useSelector } from 'react-redux'
-import { RootState} from './redux/store';
+import { useDispatch } from 'react-redux'
 import { sendInput } from './redux/actionCreators'
 import tw from "twin.macro"
+import App from './App'
 
 const PATH = tw.span`text-warmpurple`
 const INPUT = tw.input`ml-5 focus:outline-0 border-transparent focus:border-transparent focus:ring-0 focus:outline-none border-none w-1 text-warmblue bg-almostblack caret-black`
+
 type cmd =({
     command: string;
     description: string;
@@ -23,30 +24,47 @@ type cmd =({
 
 export default function Command() {
   const [command,setCommand] = React.useState("")
-   const handleChangeAndSize = (ev: any) => {
-      const target = ev.target;
-      target.style.width = '5px';
-      target.style.width = `${target.scrollWidth}px`;
-      setCommand(target.value)
-   };
+  const [res,showres] = React.useState(false)
+  const [isDisabled, setIsDisabled] = React.useState(false);
+  const [animation, setanimation] = React.useState('blinkAnimation');
+  const handleChangeAndSize = (ev: any) => {
+    const target = ev.target;
+    target.style.width = '5px';
+    target.style.width = `${target.scrollWidth}px`;
+    setCommand(target.value)
+  };
   const dispatch = useDispatch()
-  const data:cmd[] = useSelector((state:RootState)=>state)
+  
   const handleSubmit = (e:any) =>{
     e.preventDefault()
     dispatch(sendInput(command))
-    console.log('sent')
+    if(command==='clear'){
+      console.log('clear')
+      window.location.reload();
+    }
+    else{
+     setIsDisabled(true)
+     setanimation('')
+     showres(true)
+    }
   }
   return (
     <div>
         <form className='flex' onSubmit={handleSubmit}>
             <PATH> guest@myPortfolio:~$ </PATH>
             <div className='cursor'>
-                <INPUT type="text" name='command' value={command} onChange={handleChangeAndSize} autoFocus />
-                <i></i>
+                <INPUT type="text" name='command' value={command} onChange={handleChangeAndSize} autoFocus disabled={isDisabled}/>
+                <i className={animation} ></i>
                 <button type='submit'></button>
             </div>
         </form>
-        <Result data={data}/>
+        {res &&
+        <>
+            <Result />
+            <Command />
+        </>  
+        }
+        
     </div>
   )
 }
