@@ -1,53 +1,41 @@
-import React from 'react'
-import Result from './Result'
-import { useDispatch } from 'react-redux'
+import React, { FC } from 'react'
+import { useDispatch,useSelector } from 'react-redux'
 import { sendInput } from './redux/actionCreators'
 import tw from "twin.macro"
-import App from './App'
+import ResCmd from './ResCmd'
+import { cloneElement } from 'react';
 
 const PATH = tw.span`text-warmpurple`
 const INPUT = tw.input`ml-5 focus:outline-0 border-transparent focus:border-transparent focus:ring-0 focus:outline-none border-none w-1 text-warmblue bg-almostblack caret-black`
 
-type cmd =({
-    command: string;
-    description: string;
-    content: string;
-} | {
-    command: string;
-    description: string;
-    content: {
-        langues: string[];
-        frameworks: string[];
-        tools: string[];
-    };
-})
-
-export default function Command() {
+interface props{showres:FC|any,showcmd:FC|any,cmd:any}
+export default function Command({showres, showcmd,cmd}:props) {
+  const dispatch = useDispatch()
   const [command,setCommand] = React.useState("")
-  const [res,showres] = React.useState(false)
   const [isDisabled, setIsDisabled] = React.useState(false);
   const [animation, setanimation] = React.useState('blinkAnimation');
+  const [rescmd, showrescmd] = React.useState(false);
   const handleChangeAndSize = (ev: any) => {
     const target = ev.target;
     target.style.width = '5px';
     target.style.width = `${target.scrollWidth}px`;
     setCommand(target.value)
   };
-  const dispatch = useDispatch()
-  
+  const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/>)
   const handleSubmit = (e:any) =>{
     e.preventDefault()
     dispatch(sendInput(command))
     if(command==='clear'){
-      console.log('clear')
       window.location.reload();
     }
     else{
-     setIsDisabled(true)
-     setanimation('')
-     showres(true)
+      setIsDisabled(true)
+      setanimation('')
+      showrescmd(true)
     }
   }
+  console.log('show',rescmd)
+
   return (
     <div>
         <form className='flex' onSubmit={handleSubmit}>
@@ -58,13 +46,7 @@ export default function Command() {
                 <button type='submit'></button>
             </div>
         </form>
-        {res &&
-        <>
-            <Result />
-            <Command />
-        </>  
-        }
-        
+        {rescmd && clonedElement }
     </div>
   )
 }

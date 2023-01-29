@@ -1,11 +1,17 @@
+import React,{useState} from "react";
 import tw from "twin.macro"
 import Command from "./Command"
+import ResCmd from "./ResCmd";
+
 const CONTAINER = tw.div` py-5 px-2 `
 const BANNER = tw.div`flex`
 const PRE = tw.div`text-warmgrey font-mono  mt-8 ml-5 `
 const APP = tw.div`font-mono  mt-8 ml-5 `
 
 function App() {
+  const [res,showres] = React.useState<boolean>(false)
+  const [cmd,showcmd] = React.useState<boolean>(false)
+
   return (
     <CONTAINER>
       <BANNER>
@@ -17,7 +23,10 @@ function App() {
         <p>type 'help' for a list of available commands.</p>
       </PRE>
       <APP>
-        <Command />
+        <>
+        <Command showres={showres} showcmd={showcmd} cmd={cmd}/>
+        {cmd && <ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/> }
+        </>
       </APP>
     </CONTAINER>
   )
