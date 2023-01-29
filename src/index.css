@@ -2,39 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom{
-caret-color: #00c6cf;
-caret-shape: block;
- font-variant: small-caps; 
-}
-
-#demo {
-    color: transparent;
-    text-shadow: 0 0 white; }  /* Customize the look of your caret */ 
-
-#caret { 	
-    border-right: 0.5em solid white; 	
-    margin-right: -0.5em; 	
-    animation: blink-animation 1s steps(2, start) infinite; } 
-@keyframes blink-animation { 	to { 		visibility: hidden; 	} } 
-
-
 .cursor {
 	position: relative;
 }
 .cursor	i {
 	position: absolute;
 	width: 10px;
-	height: 80%;
-	background-color: gray;
-	left: 5px;
+	height: 90%;
+	background-color:  #00c6cf;
 	top: 10%;
 	animation-name: blink;
 	animation-duration: 800ms;
 	animation-iteration-count: infinite;
 	opacity: 1;
-    user-select: none 
 }
+
 @keyframes blink {
 	from { opacity: 1; }
 	to { opacity: 0; }
