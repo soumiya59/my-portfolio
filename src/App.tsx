@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import tw from "twin.macro"
 import Command from "./Command"
-import ResCmd from "./ResCmd";
 
 const CONTAINER = tw.div` py-5 px-2 `
 const BANNER = tw.div`flex`
@@ -25,7 +24,6 @@ function App() {
       <APP>
         <>
         <Command showres={showres} showcmd={showcmd} cmd={cmd}/>
-        {/* {cmd && <ResCmd showres={showres} showcmd={showcmd} cmd={cmd} commandInput={commandInput}/> } */}
         </>
       </APP>
     </CONTAINER>

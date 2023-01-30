@@ -1,6 +1,4 @@
 import React, { FC } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
-import { sendInput } from './redux/actionCreators'
 import tw from "twin.macro"
 import ResCmd from './ResCmd'
 import { cloneElement } from 'react';
@@ -10,7 +8,6 @@ const INPUT = tw.input`ml-5 focus:outline-0 border-transparent focus:border-tran
 
 interface props{showres:FC|any,showcmd:FC|any,cmd:any}
 export default function command({showres, showcmd,cmd}:props) {
-  const dispatch = useDispatch()
   const [commandInput,setcommandInput] = React.useState("")
   const [isDisabled, setIsDisabled] = React.useState(false);
   const [animation, setanimation] = React.useState('blinkAnimation');
@@ -24,7 +21,6 @@ export default function command({showres, showcmd,cmd}:props) {
 
   const handleSubmit = (e:any) =>{
     e.preventDefault()
-    // dispatch(sendInput(commandInput))
     if(commandInput==='clear'){
       window.location.reload();
     }
