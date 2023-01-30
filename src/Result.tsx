@@ -70,13 +70,17 @@ export default function Result({commandInput}:any) {
           else{
             if(cm.command==='projects'){
             return <p key={i}>check out my github account : 
-            <a href="https://github.com/soumiya59" target='_blank'>{cm.content}</a></p>
+            <a href={cm.content} target='_blank'>{cm.content}</a></p>
             }else{
             if(cm.command==='linkedin'){
             return <p key={i}>check out my linkedin account : 
-            <a href="https://www.linkedin.com/in/soumiya-ayouch-b594361b6/" target='_blank'>{cm.content}</a></p>}
+            <a href={cm.content} target='_blank'>{cm.content}</a></p>}
             else{
-              return <p key={i}>{cm.content}</p>
+              if(cm.command==='music'){
+              return <a href={cm.content} key={i} target='_blank'>{cm.content}</a>}
+              else{
+                return <p key={i}>{cm.content}</p>
+              }
             }
             }
           }
