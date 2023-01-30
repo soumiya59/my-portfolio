@@ -9,9 +9,9 @@ const PATH = tw.span`text-warmpurple`
 const INPUT = tw.input`ml-5 focus:outline-0 border-transparent focus:border-transparent focus:ring-0 focus:outline-none border-none w-1 text-warmblue bg-almostblack caret-black`
 
 interface props{showres:FC|any,showcmd:FC|any,cmd:any}
-export default function Command({showres, showcmd,cmd}:props) {
+export default function command({showres, showcmd,cmd}:props) {
   const dispatch = useDispatch()
-  const [command,setCommand] = React.useState("")
+  const [commandInput,setcommandInput] = React.useState("")
   const [isDisabled, setIsDisabled] = React.useState(false);
   const [animation, setanimation] = React.useState('blinkAnimation');
   const [rescmd, showrescmd] = React.useState(false);
@@ -19,13 +19,13 @@ export default function Command({showres, showcmd,cmd}:props) {
     const target = ev.target;
     target.style.width = '5px';
     target.style.width = `${target.scrollWidth}px`;
-    setCommand(target.value)
+    setcommandInput(target.value)
   };
 
   const handleSubmit = (e:any) =>{
     e.preventDefault()
-    dispatch(sendInput(command))
-    if(command==='clear'){
+    // dispatch(sendInput(commandInput))
+    if(commandInput==='clear'){
       window.location.reload();
     }
     else{
@@ -34,7 +34,7 @@ export default function Command({showres, showcmd,cmd}:props) {
       showrescmd(true)
     }
   }
-  const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/>)
+  const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd} commandInput={commandInput}/>)
   console.log('show',rescmd)
 
   return (
@@ -42,7 +42,7 @@ export default function Command({showres, showcmd,cmd}:props) {
         <form className='flex' onSubmit={handleSubmit}>
             <PATH> guest@myPortfolio:~$ </PATH>
             <div className='cursor'>
-                <INPUT type="text" name='command' value={command} onChange={handleChangeAndSize} autoFocus disabled={isDisabled}/>
+                <INPUT type="text" name='commandInput' value={commandInput} onChange={handleChangeAndSize} autoFocus disabled={isDisabled}/>
                 <i className={animation} ></i>
                 <button type='submit'></button>
             </div>

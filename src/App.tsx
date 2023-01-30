@@ -5,7 +5,7 @@ import ResCmd from "./ResCmd";
 
 const CONTAINER = tw.div` py-5 px-2 `
 const BANNER = tw.div`flex`
-const PRE = tw.div`text-warmgrey font-mono  mt-8 ml-5 `
+const PRE = tw.div`text-coolgrey font-mono  mt-8 ml-5 `
 const APP = tw.div`font-mono  mt-8 ml-5 `
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
       <APP>
         <>
         <Command showres={showres} showcmd={showcmd} cmd={cmd}/>
-        {cmd && <ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/> }
+        {/* {cmd && <ResCmd showres={showres} showcmd={showcmd} cmd={cmd} commandInput={commandInput}/> } */}
         </>
       </APP>
     </CONTAINER>

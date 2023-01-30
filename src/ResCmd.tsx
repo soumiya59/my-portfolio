@@ -1,17 +1,15 @@
 import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { RootState} from './redux/store';
-import StringResult from './StringResult';
 import Result from './Result'
 import Command from './Command';
-// import useForceUpdate from 'use-force-update';
 
 type cmd =({
-    command: string;
+    commandInput: string;
     description: string;
     content: string;
 } | {
-    command: string;
+    commandInput: string;
     description: string;
     content: {
         langues: string[];
@@ -19,14 +17,17 @@ type cmd =({
         tools: string[];
     };
 })
-export default function ResCmd({showres,showcmd,cmd}:any) {
-//   const forceUpdate = useForceUpdate();
-//   cmd && forceUpdate() 
-  const data:cmd[]|cmd = useSelector((state:RootState)=>state)
+interface props {
+  showres:any;
+  showcmd:any;
+  cmd:boolean;
+  commandInput:string
+}
+export default function ResCmd({showres,showcmd,cmd,commandInput}:props) {
   return (
     <div>
         <div>
-        {(typeof data == 'string') ? <StringResult /> : <Result /> }
+        <Result commandInput={commandInput}/> 
         <Command  showres={showres} showcmd={showcmd} cmd={cmd}/>
         </div>
     </div>
