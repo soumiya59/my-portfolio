@@ -21,7 +21,7 @@ export default function Command({showres, showcmd,cmd}:props) {
     target.style.width = `${target.scrollWidth}px`;
     setCommand(target.value)
   };
-  const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/>)
+
   const handleSubmit = (e:any) =>{
     e.preventDefault()
     dispatch(sendInput(command))
@@ -34,6 +34,7 @@ export default function Command({showres, showcmd,cmd}:props) {
       showrescmd(true)
     }
   }
+  const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd}/>)
   console.log('show',rescmd)
 
   return (

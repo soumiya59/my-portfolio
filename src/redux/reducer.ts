@@ -11,7 +11,8 @@ type cmd =({
         tools: string[];
     };
 })
-const init:cmd[]|any =[
+type action={type:string,payload:string}
+const init:cmd[] =[
     {command: 'about' , description: 'stop stalking me' , content: 'I\'m a full-stack developer building my version of the digital world one step at a time. using a bench of technologies and programming languages'},
     {command: 'projects' , description: 'some projects i\'ve posted' , content: 'https://github.com/soumiya59?tab=repositories'},
     {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
@@ -25,7 +26,7 @@ const init:cmd[]|any =[
     {command: 'clear' , description: 'clear terminal' ,content:''},
 ]
 
-export default function reducer(state=init,action:any){
+export default function reducer(state=init,action:action):any{
   switch(action.type){
     case 'help':
       return state
