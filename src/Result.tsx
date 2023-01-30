@@ -1,6 +1,7 @@
 import tw from "twin.macro"
 
 const RES = tw.div` flex justify-evenly max-w-xl  items-baseline `
+const A = tw.a`ml-2 hover:bg-warmblue hover:text-almostblack`
 
 type cmd =({
     command: string;
@@ -26,6 +27,7 @@ const data:cmd[] =[
                 backEnd  :['Mysql', 'Sql', 'MongoDB', 'PHP', 'Laravel', 'Python'], 
                 tools: ['Vscode', 'Atom', 'Vim', 'Linux', 'Git', 'Github', 'Gitlab', 'LAMP', 'Canva', 'Figma', 'UML', 'jira']}},
     {command: 'quote',description:'quote of the day' ,content:'be nice'},
+    {command: 'repo' , description: 'check this project\'s repository' ,content:'https://github.com/soumiya59/my-portfolio'},
     {command: 'clear' , description: 'clear terminal' ,content:''},
 ]
 
@@ -34,7 +36,7 @@ export default function Result({commandInput}:any) {
   console.log(res)
   console.log(res.length)
   return (
-    <div className="my-4 text-coolgrey ">
+    <div className="my-2 text-coolgrey ">
       {res.length===0 && <p>command not found</p>}
 
     {  res.length===data.length && 
@@ -70,16 +72,26 @@ export default function Result({commandInput}:any) {
           else{
             if(cm.command==='projects'){
             return <p key={i}>check out my github account : 
-            <a href={cm.content} target='_blank'>{cm.content}</a></p>
+            <A href={cm.content} target='_blank'>{cm.content}</A></p>
             }else{
             if(cm.command==='linkedin'){
             return <p key={i}>check out my linkedin account : 
-            <a href={cm.content} target='_blank'>{cm.content}</a></p>}
+            <A href={cm.content} target='_blank'>{cm.content}</A></p>}
             else{
               if(cm.command==='music'){
-              return <a href={cm.content} key={i} target='_blank'>{cm.content}</a>}
+              return <A href={cm.content} key={i} target='_blank'>{cm.content}</A>}
               else{
-                return <p key={i}>{cm.content}</p>
+                if(cm.command==='repo'){
+                return (
+                <div key={i}>
+                <p>i built this website from scratch using React and Typescript</p>
+                <p>check out this project's repository : 
+                <A href={cm.content} target='_blank'>{cm.content}</A></p>
+                </div>)
+                }
+                else{
+                  return <p key={i}>{cm.content}</p>
+                }
               }
             }
             }

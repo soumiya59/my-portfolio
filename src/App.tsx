@@ -5,6 +5,7 @@ import Command from "./Command"
 const CONTAINER = tw.div` py-5 px-2 `
 const BANNER = tw.div`flex`
 const PRE = tw.div`text-coolgrey font-mono  mt-8 ml-5 `
+const SPAN = tw.span`text-warmblue font-mono  `
 const APP = tw.div`font-mono  mt-8 ml-5 `
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       </BANNER>
       <PRE>
         <p>welcome to my interactive web terminal.</p>
-        <p>type 'help' for a list of available commands.</p>
+        <p>type <SPAN>'help'</SPAN> for a list of available commands.</p>
       </PRE>
       <APP>
         <>
