@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC} from 'react'
 import tw from "twin.macro"
 import ResCmd from './ResCmd'
 import { cloneElement } from 'react';
@@ -7,11 +7,13 @@ const PATH = tw.span`text-warmpurple`
 const INPUT = tw.input`ml-5 focus:outline-0 border-transparent focus:border-transparent focus:ring-0 focus:outline-none border-none w-1 text-warmblue bg-almostblack caret-black`
 
 interface props{showres:FC|any,showcmd:FC|any,cmd:any}
+
 export default function command({showres, showcmd,cmd}:props) {
   const [commandInput,setcommandInput] = React.useState("")
   const [isDisabled, setIsDisabled] = React.useState(false);
   const [animation, setanimation] = React.useState('blinkAnimation');
   const [rescmd, showrescmd] = React.useState(false);
+  
   const handleChangeAndSize = (ev: any) => {
     const target = ev.target;
     target.style.width = '5px';
@@ -30,8 +32,8 @@ export default function command({showres, showcmd,cmd}:props) {
       showrescmd(true)
     }
   }
+  
   const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd} commandInput={commandInput}/>)
-  console.log('show',rescmd)
 
   return (
     <div>

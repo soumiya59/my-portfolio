@@ -15,7 +15,7 @@ function App() {
   return (
     <CONTAINER>
       <BANNER>
-        <img src="banner00.svg" alt="" className="" />
+        <img src="banner01.svg" alt="" className="md:w-2/3" />
         <span className=" text-warmpurple text-lg self-end opacity-50 ml-5">v1.0</span>
       </BANNER>
       <PRE>
@@ -23,9 +23,7 @@ function App() {
         <p>type <SPAN>'help'</SPAN> for a list of available commands.</p>
       </PRE>
       <APP>
-        <>
         <Command showres={showres} showcmd={showcmd} cmd={cmd}/>
-        </>
       </APP>
     </CONTAINER>
   )

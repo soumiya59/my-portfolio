@@ -33,8 +33,6 @@ const data:cmd[] =[
 
 export default function Result({commandInput}:any) {
   const res = commandInput=='help' ? [...data] : [...data].filter((c:cmd)=> c.command== commandInput )
-  console.log(res)
-  console.log(res.length)
   return (
     <div className="my-2 text-coolgrey ">
       {res.length===0 && <p>command not found</p>}
