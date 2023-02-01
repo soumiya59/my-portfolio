@@ -1,4 +1,4 @@
-import React, { FC} from 'react'
+import React, { FC,useRef} from 'react'
 import tw from "twin.macro"
 import ResCmd from './ResCmd'
 import { cloneElement } from 'react';
@@ -13,6 +13,7 @@ export default function command({showres, showcmd,cmd}:props) {
   const [isDisabled, setIsDisabled] = React.useState(false);
   const [animation, setanimation] = React.useState('blinkAnimation');
   const [rescmd, showrescmd] = React.useState(false);
+  const ref = useRef<HTMLInputElement>(null);
   
   const handleChangeAndSize = (ev: any) => {
     const target = ev.target;
@@ -36,11 +37,11 @@ export default function command({showres, showcmd,cmd}:props) {
   const clonedElement = cloneElement(<ResCmd showres={showres} showcmd={showcmd} cmd={cmd} commandInput={commandInput}/>)
 
   return (
-    <div>
+    <div onClick={()=>ref.current?.focus()}>
         <form className='flex' onSubmit={handleSubmit}>
             <PATH> guest@myPortfolio:~$ </PATH>
             <div className='cursor'>
-                <INPUT type="text" name='commandInput' value={commandInput} onChange={handleChangeAndSize} autoFocus disabled={isDisabled}/>
+                <INPUT type="text" name='commandInput' value={commandInput} onChange={handleChangeAndSize} autoFocus ref={ref} disabled={isDisabled}/>
                 <i className={animation} ></i>
                 <button type='submit'></button>
             </div>
