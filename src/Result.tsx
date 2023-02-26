@@ -17,7 +17,7 @@ type cmd =({
     };
 })
 const data:cmd[] =[
-    {command: 'about' , description: 'stop stalking me' , content: 'I\'m a full-stack developer building my version of the digital world one step at a time. using a bench of technologies and programming languages'},
+    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 20 years old web full stack developer, familiar with wide range of programming utilities and languages, knowledgeable of frontend and backend development requirements. Currently working with Reactjs, Typescript, TailwindCss. and laravel for backend apps'},
     {command: 'projects' , description: 'some projects i\'ve posted' , content: 'https://github.com/soumiya59?tab=repositories'},
     {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
@@ -25,9 +25,9 @@ const data:cmd[] =[
     {command: 'skills' , description: 'i\'m good at some stuff' , 
       content: {frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'JSON', 'ReactJS', 'TypeScript', 'Redux'],
                 backEnd  :['Mysql', 'Sql', 'MongoDB', 'PHP', 'Laravel', 'Python'], 
-                tools: ['Vscode', 'Atom', 'Vim', 'Linux', 'Git', 'Github', 'Gitlab', 'LAMP', 'Canva', 'Figma', 'UML', 'jira']}},
-    {command: 'quote',description:'quote of the day' ,content:'be nice'},
+                tools: ['Vscode', 'Atom', 'Vim', 'Linux', 'Git', 'Github', 'Gitlab', 'LAMP', 'Canva', 'Figma', 'UML', 'jira','Docker']}},
     {command: 'repo' , description: 'check this project\'s repository' ,content:'https://github.com/soumiya59/my-portfolio'},
+    {command: 'quote',description:'quote of the day' ,content:'If you want to lift yourself up, lift up someone else.'},
     {command: 'clear' , description: 'clear terminal' ,content:''},
 ]
 
