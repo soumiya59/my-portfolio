@@ -17,7 +17,7 @@ type cmd =({
     };
 })
 const data:cmd[] =[
-    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 20 years old web full stack developer, familiar with wide range of programming utilities and languages, knowledgeable of frontend and backend development requirements. Currently working with Reactjs, Typescript, TailwindCss. and laravel for backend apps'},
+    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 20 years old full stack web developer, familiar with wide range of programming utilities and languages, knowledgeable of frontend and backend development requirements. Currently working with Reactjs, Typescript, TailwindCss. and laravel for backend apps.'},
     {command: 'projects' , description: 'some projects i\'ve posted' , content: 'https://github.com/soumiya59?tab=repositories'},
     {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
