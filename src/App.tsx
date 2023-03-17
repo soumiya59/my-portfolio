@@ -3,7 +3,7 @@ import tw from "twin.macro"
 import Command from "./Command"
 
 const CONTAINER = tw.div` py-5 px-2 `
-const BANNER = tw.div`flex ml-2`
+const BANNER = tw.div`flex ml-2 md:ml-0`
 const PRE = tw.div`text-coolgrey font-mono  mt-8 ml-4 `
 const SPAN = tw.span`text-warmblue font-mono  `
 const APP = tw.div`font-mono  mt-8 ml-4 `
