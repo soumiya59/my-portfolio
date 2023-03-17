@@ -34,7 +34,7 @@ const data:cmd[] =[
 export default function Result({commandInput}:any) {
   const res = commandInput=='help' ? [...data] : [...data].filter((c:cmd)=> c.command== commandInput )
   return (
-    <div className="my-2 text-coolgrey ">
+    <div className="my-2 mr-2 text-coolgrey ">
       {res.length===0 && <p>command not found</p>}
 
     {  res.length===data.length && 
@@ -77,7 +77,7 @@ export default function Result({commandInput}:any) {
             <A href={cm.content} target='_blank'>{cm.content}</A></p>}
             else{
               if(cm.command==='music'){
-              return <A href={cm.content} key={i} target='_blank'>{cm.content}</A>}
+              return <div className="-ml-2"><A href={cm.content} key={i} target='_blank'>{cm.content}</A></div>}
               else{
                 if(cm.command==='repo'){
                 return (
