@@ -12,6 +12,7 @@ type cmd =({
     description: string;
     content: {
         frontEnd: string[];
+        database: string[];
         backEnd: string[];
         tools: string[];
     };
@@ -23,9 +24,11 @@ const data:cmd[] =[
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
     {command: 'music' , description: 'a little break' , content: 'https://www.youtube.com/watch?v=wDjeBNv6ip0'},
     {command: 'skills' , description: 'i\'m good at some stuff' , 
-      content: {frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'JSON', 'ReactJS', 'TypeScript', 'Redux'],
-                backEnd  :['Mysql', 'Sql', 'MongoDB', 'PHP', 'Laravel', 'Python'], 
-                tools: ['Vscode', 'Atom', 'Vim', 'Linux', 'Git', 'Github', 'Gitlab', 'LAMP', 'Canva', 'Figma', 'UML', 'jira','Docker']}},
+      content: {
+        frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'ReactJS', 'TypeScript', 'Redux'],
+        backEnd  :['PHP', 'Laravel','NodeJS', 'Python'], 
+        database:['MySQL','Mongodb'],
+        tools: ['VScode','Vim','Linux', 'Git', 'Github', 'Gitlab','Canva', 'Figma', 'jira','Docker']}},
     {command: 'repo' , description: 'check this project\'s repository' ,content:'https://github.com/soumiya59/my-portfolio'},
     {command: 'quote',description:'quote of the day' ,content:'If you want to lift yourself up, lift up someone else.'},
     {command: 'clear' , description: 'clear terminal' ,content:''},
@@ -58,6 +61,10 @@ export default function Result({commandInput}:any) {
                 ))} </p>
                <p>back end : 
                {cm.content.backEnd.map((element:string) => (  
+                 <span key={element}> {element} </span> 
+                ))} </p>
+               <p>database : 
+               {cm.content.database.map((element:string) => (  
                  <span key={element}> {element} </span> 
                 ))} </p>
                <p>tools : 

@@ -16,7 +16,7 @@ function App() {
     <CONTAINER>
       <BANNER>
         <img src="banner01.svg" alt="" className="md:w-2/3 md:max-w-6xl" />
-        <span className=" text-warmpurple text-lg self-end opacity-70 ml-5">v1.1.0</span>
+        <span className=" text-warmpurple text-lg self-end opacity-70 ml-5">v1.2.0</span>
       </BANNER>
       <PRE>
         <p>welcome to my interactive web terminal.</p>
