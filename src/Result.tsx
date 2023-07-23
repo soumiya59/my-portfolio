@@ -18,17 +18,17 @@ type cmd =({
     };
 })
 const data:cmd[] =[
-    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 20 years old full stack web developer, familiar with wide range of programming utilities and languages .'},
+    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 21 years old full stack web developer, I bring a passion for creating dynamic and intuitive web applications. With a diverse skill set encompassing both front-end and back-end technologies, I excel at delivering end-to-end solutions that seamlessly integrate user-centric design with robust functionality.'},
     {command: 'projects' , description: 'some projects i\'ve posted' , content: 'https://github.com/soumiya59?tab=repositories'},
     {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
     {command: 'music' , description: 'a little break' , content: 'https://www.youtube.com/watch?v=wDjeBNv6ip0'},
     {command: 'skills' , description: 'i\'m good at some stuff' , 
       content: {
-        frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'ReactJS', 'TypeScript', 'Redux'],
+        frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'ReactJS', 'TypeScript', 'Redux','NextJS'],
         backEnd  :['PHP', 'Laravel','NodeJS', 'Python'], 
         database:['MySQL','Mongodb'],
-        tools: ['VScode','Vim','Linux', 'Git', 'Github', 'Gitlab','Canva', 'Figma', 'jira','Docker']}},
+        tools: ['VScode','Vim','Linux', 'Git', 'Github', 'Gitlab', 'Figma', 'jira','Docker']}},
     {command: 'repo' , description: 'check this project\'s repository' ,content:'https://github.com/soumiya59/my-portfolio'},
     {command: 'quote',description:'quote of the day' ,content:'If you want to lift yourself up, lift up someone else.'},
     {command: 'clear' , description: 'clear terminal' ,content:''},
