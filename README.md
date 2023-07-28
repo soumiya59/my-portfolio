@@ -1,6 +1,6 @@
 # [Portfolio | Terminal](https://serene-chimera-a0a343.netlify.app/)
 
-A terminal style website
+A terminal style portfolio
 
 ![screenshot](/public/screenshot2.png)
 
