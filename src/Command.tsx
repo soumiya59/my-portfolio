@@ -41,7 +41,7 @@ export default function command({showres, showcmd,cmd}:props) {
         <form className='flex' onSubmit={handleSubmit}>
             <PATH> guest@myPortfolio:~$ </PATH>
             <div className='cursor'>
-                <INPUT type="text" name='commandInput' value={commandInput} onChange={handleChangeAndSize} autoFocus ref={ref} disabled={isDisabled}/>
+                <INPUT type="text" name='commandInput' value={commandInput} onChange={handleChangeAndSize} autoFocus ref={ref} disabled={isDisabled} autoComplete='off'/>
                 <i className={animation} ></i>
                 <button type='submit'></button>
             </div>

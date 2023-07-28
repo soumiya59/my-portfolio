@@ -19,9 +19,10 @@ type cmd =({
 })
 const data:cmd[] =[
     {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 21 years old full stack web developer, I bring a passion for creating dynamic and intuitive web applications. With a diverse skill set encompassing both front-end and back-end technologies, I excel at delivering end-to-end solutions that seamlessly integrate user-centric design with robust functionality.'},
-    {command: 'projects' , description: 'some projects i\'ve posted' , content: 'https://github.com/soumiya59?tab=repositories'},
-    {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
+    {command: 'projects' , description: 'some projects i\'ve posted' , content: ''},
+    {command: 'github' , description: 'my github profile' , content: 'https://github.com/soumiya59'},
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
+    {command: 'email' , description: 'you can email me' , content: 'ayouch.somaya@gmail.com'},
     {command: 'music' , description: 'a little break' , content: 'https://www.youtube.com/watch?v=wDjeBNv6ip0'},
     {command: 'skills' , description: 'i\'m good at some stuff' , 
       content: {
@@ -76,11 +77,24 @@ export default function Result({commandInput}:any) {
           }
           else{
             if(cm.command==='projects'){
-            return <p key={i}>check out my github account : 
-            <A href={cm.content} target='_blank'>{cm.content}</A></p>
-            }else{
-            if(cm.command==='linkedin'){
-            return <p key={i}>check out my linkedin account : 
+              return(
+                <div>
+                  <p>SALVIA company website : <A  target='_blank' href="https://salvia.ma/">www.salvia.ma</A> </p>               
+                  <p>web development resources website : <A target='_blank' href="https://webdev-resources-blush.vercel.app">webdev-resources-blush.vercel.app</A> </p>               
+                  <p>weather app : <A target='_blank' href="https://what-to-wear-xi.vercel.app/">what-to-wear-xi.vercel.app</A> </p>               
+                  <p>decision wheel : <A target='_blank' href="https://make-decision.vercel.app/">make-decision.vercel.app</A> </p>               
+                  <p>resume builder : <A target='_blank' href="https://github.com/soumiya59/cv-builder">www.github.com/soumiya59/cv-builder</A> </p>               
+                  <p>mirror writing generator : <A target='_blank' href="https://mirror-writing.vercel.app/">mirror-writing.vercel.app/</A> </p>               
+                  <p>cryptography website : <A target='_blank' href="https://github.com/soumiya59/Encrypt">www.github.com/soumiya59/Encrypt</A> </p>               
+                  <p>e-commerce platform : <A target='_blank' href="https://github.com/soumiya59/file_rouge">www.github.com/soumiya59/file_rouge</A> </p>               
+                </div>
+              )
+            // return <p key={i}>check out my github account : 
+            // <A href={cm.content} target='_blank'>{cm.content}</A></p>
+            }
+            else{
+            if(cm.command==='linkedin' || cm.command==='github'){
+            return <p key={i}>check out my {cm.command} profile : 
             <A href={cm.content} target='_blank'>{cm.content}</A></p>}
             else{
               if(cm.command==='music'){
