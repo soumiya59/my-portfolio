@@ -18,7 +18,7 @@ type cmd =({
     };
 })
 const data:cmd[] =[
-    {command: 'about' , description: 'brief summary' , content: 'as you probably know, my name is Ayouch Soumiya. i\'m a 21 years old full stack web developer, I bring a passion for creating dynamic and intuitive web applications. With a diverse skill set encompassing both front-end and back-end technologies, I excel at delivering end-to-end solutions that seamlessly integrate user-centric design with robust functionality.'},
+    {command: 'about' , description: 'brief summary' , content: 'i\'m a 22 years old full stack web developer, I bring a passion for creating dynamic and intuitive web applications. With a diverse skill set encompassing both front-end and back-end technologies.'},
     {command: 'projects' , description: 'some projects i\'ve posted' , content: ''},
     {command: 'github' , description: 'my github profile' , content: 'https://github.com/soumiya59'},
     {command: 'linkedin' , description: 'you can text me' , content: 'https://www.linkedin.com/in/soumiya-ayouch-b594361b6/'},
@@ -27,9 +27,9 @@ const data:cmd[] =[
     {command: 'skills' , description: 'i\'m good at some stuff' , 
       content: {
         frontEnd :['HTML', 'CSS', 'Bootstrap', 'TailwindCSS', 'JavaScript', 'JQuery', 'ReactJS', 'TypeScript', 'Redux','NextJS'],
-        backEnd  :['PHP', 'Laravel','NodeJS', 'Python'], 
+        backEnd  :['PHP', 'Laravel','NodeJS', 'Python', 'JavaEE'], 
         database:['MySQL','Mongodb'],
-        tools: ['VScode','Vim','Linux', 'Git', 'Github', 'Gitlab', 'Figma', 'jira','Docker']}},
+        tools: ['VScode','Vim','eclipse','netBeans', 'Git', 'Github', 'Gitlab', 'Figma', 'jira','Docker']}},
     {command: 'repo' , description: 'check this project\'s repository' ,content:'https://github.com/soumiya59/my-portfolio'},
     {command: 'quote',description:'quote of the day' ,content:'If you want to lift yourself up, lift up someone else.'},
     {command: 'clear' , description: 'clear terminal' ,content:''},
